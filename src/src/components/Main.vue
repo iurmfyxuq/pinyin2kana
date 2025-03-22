@@ -40,7 +40,7 @@
                 后鼻音全部改为前鼻音
             </div>
             <!-- 显示在浏览器底部 -->
-            <h4 style="position: fixed; bottom: 0; left: 0; right: 0; text-align: center;">纯属愉乐</h4>
+            <h4 style="position: fixed; bottom: 0; left: 0; right: 0; text-align: center;">纯属娱乐</h4>
         </div>
     </div>
 </template>
