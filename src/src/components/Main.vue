@@ -3,7 +3,7 @@
     <div class="main">
         <!-- 标题 -->
         <h1>中文转日语假名</h1>
-        <h4>输入中文 点击转换 会以拼音按照一定规则转换为假名</h4>
+        <h4>输入中文，点击转换，会以片假名显示，点击发音图标可以用日语读中文(需要浏览器支持)</h4>
         <!-- 输入中文 输入框大小为50px 黑色主题 默认显示一些内容-->
         <input type="text" v-model="input" class="input" placeholder="请输入中文" />
 
@@ -44,7 +44,7 @@
                 后鼻音全部改为前鼻音
             </div>
             <!-- 显示在浏览器底部 -->
-            <h4 style="position: fixed; bottom: 0; left: 0; right: 0; text-align: center;">纯属娱乐</h4>
+            <h4 style="position: fixed; bottom: 0; left: 0; right: 0; text-align: center;">转换方式完全由我个人感觉，毫无何参考价值，纯属娱乐</h4>
         </div>
     </div>
 </template>
