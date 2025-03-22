@@ -63,7 +63,7 @@ function initSpeech() {
         'lang': 'ja-JP',
         'rate': 1,
         'pitch': 1,
-        'voice': 'Eddy (日语（日本）)',
+        'voice': 'Microsoft Keita Online (Natural) - Japanese (Japan)',
         'splitSentences': true,
         'listeners': {
             'onvoiceschanged': (voices) => {
