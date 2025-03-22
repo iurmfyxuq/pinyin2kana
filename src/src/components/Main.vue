@@ -23,19 +23,23 @@
                 </div>
             </div>
         </div>
+        <!-- <div class="result-text">{{ result }}</div> -->
+
         <!-- 点击按钮 按钮大小为50px 黑色主题-->
         <button @click="handleClick" class="button">转换</button>
         <div class="rule">
             <!-- 以表格显示 表格带边框 表格内容居中-->
             <h4 style="margin-top: 20px;">转换规则</h4>
             <div>
-                L->R, C->K
+                L->r,
+                C->z,
                 X->shi,
-                Q->KI,
+                Q->ki,
                 <br>
-                ZH->Z,
-                CH->S,
-                SH->S,
+                ZH->z,
+                CH->s,
+                SH->s,
+                ü->yu
                 <br>
                 后鼻音全部改为前鼻音
             </div>
@@ -85,6 +89,8 @@ onMounted(() => {
 const handleClick = () => {
     if (input.value != '') {
         const temp = pinyin(input.value, { toneType: 'none', type: 'str' });
+        // 将所有ü替换为v
+        // let temp = pinyin(input.value, { toneType: 'none', type: 'str' }).replace(/ü/g, 'v');
         console.log(temp);
 
         let input_str = temp + " ";
@@ -99,12 +105,9 @@ const handleClick = () => {
             } else {
                 console.log("temp_word is == " + temp_word);
                 if (temp_word[0] == 'l') {
-                    // 修改temp_word的第一个字符    
                     temp_word = temp_word.replace('l', 'r');
                     console.log("now is ===" + temp_word);
-                }
-                // 如果temp_word的第一个字符是c 则替换为s
-                if (temp_word[0] == 'c') {
+                } else if (temp_word[0] == 'c') {
                     if (temp_word[1] == 'h') {
                         temp_word = temp_word.replace('ch', 's');
                         console.log("now is ===" + temp_word);
@@ -114,16 +117,16 @@ const handleClick = () => {
                     }
                 }
                 // 如果temp_word的第一个字符是x 则替换为shi
-                if (temp_word[0] == 'x') {
+                else if (temp_word[0] == 'x') {
                     temp_word = temp_word.replace('x', 'shi');
                     console.log("now is ===" + temp_word);
                 }
                 // 如果temp_word的第一个字符是q 则替换为k
-                if (temp_word[0] == 'q') {
+                else if (temp_word[0] == 'q') {
                     temp_word = temp_word.replace('q', 'ki');
                     console.log("now is ===" + temp_word);
                 }
-                if (temp_word[0] == 'z') {
+                else if (temp_word[0] == 'z') {
                     if (temp_word[1] == 'h') {
                         temp_word = temp_word.replace('zh', 'z');
                         console.log("now is ===" + temp_word);
@@ -132,8 +135,13 @@ const handleClick = () => {
                         console.log("now is ===" + temp_word);
                     }
                 }
-                if (temp_word[0] == 'r') {
+                else if (temp_word[0] == 'r') {
                     temp_word = temp_word.replace('r', '');
+                    console.log("now is ===" + temp_word);
+                }
+                // 将ü替换为u
+                else if (temp_word[1] == 'ü') {
+                    temp_word = temp_word.replace('ü', 'yu');
                     console.log("now is ===" + temp_word);
                 }
                 // 后鼻音的g去掉 取字符串最后一位
