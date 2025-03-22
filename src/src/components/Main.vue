@@ -63,11 +63,15 @@ function initSpeech() {
         'lang': 'ja-JP',
         'rate': 1,
         'pitch': 1,
-        // 'voice': 'Google 日本語 女性',
+        'voice': 'Eddy (日语（日本）)',
         'splitSentences': true,
         'listeners': {
             'onvoiceschanged': (voices) => {
-                console.log("Event voiceschanged", voices)
+                for (let i = 0; i < voices.length; i++) {
+                    if (voices[i].lang == 'ja-JP') {
+                        console.log("Event voiceschanged", voices[i])
+                    }
+                }
             }
         }
     });
@@ -184,19 +188,23 @@ const handleSound = () => {
 }
 
 .input {
+
     /* 如果是手机打开，则宽度为80% */
     @media (max-width: 768px) {
         width: 80%;
     }
+
     /* 如果是电脑打开，则宽度为40% */
     @media (min-width: 768px) {
         width: 40%;
     }
+
     height: 40px;
     border: 1px solid #333;
     border-radius: 5px;
     padding: 0 10px;
     font-size: 16px;
+
     @media (prefers-color-scheme: dark) {
         color: #fff;
         background-color: #000;
@@ -206,6 +214,7 @@ const handleSound = () => {
         color: #000000;
         background-color: #e9e9e9;
     }
+
     outline: none;
     /* 自动换行 */
     word-wrap: break-word;
