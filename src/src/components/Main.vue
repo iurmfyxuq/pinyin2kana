@@ -184,7 +184,14 @@ const handleSound = () => {
 }
 
 .input {
-    width: 40%;
+    /* 如果是手机打开，则宽度为80% */
+    @media (max-width: 768px) {
+        width: 80%;
+    }
+    /* 如果是电脑打开，则宽度为40% */
+    @media (min-width: 768px) {
+        width: 40%;
+    }
     height: 40px;
     border: 1px solid #333;
     border-radius: 5px;
@@ -248,7 +255,7 @@ const handleSound = () => {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    max-width: 40%;
+    max-width: 60%;
 }
 
 .result-text {
