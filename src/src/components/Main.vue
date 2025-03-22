@@ -2,10 +2,10 @@
     <!-- 上下排布剧中对齐 间隔20px -->
     <div class="main">
         <!-- 标题 -->
-        <h1>中文转日语假名</h1>
-        <h4>输入中文，点击转换，会以片假名显示，点击发音图标可以用日语读中文(需要浏览器支持)</h4>
+        <h1>汉字转片假名</h1>
+        <h4>输入汉字后点击转换，会以片假名显示，点击发音图标可以朗读(需要浏览器支持)</h4>
         <!-- 输入中文 输入框大小为50px 黑色主题 默认显示一些内容-->
-        <input type="text" v-model="input" class="input" placeholder="请输入中文" />
+        <input type="text" v-model="input" class="input" placeholder="请输入汉字" />
 
         <!-- 结果栏 左右两边分开 -->
         <div class="result">
@@ -67,7 +67,7 @@ function initSpeech() {
         'lang': 'ja-JP',
         'rate': 1,
         'pitch': 1,
-        'voice': 'Microsoft Keita Online (Natural) - Japanese (Japan)',
+        'voice': 'Eddy (日语（日本）)',
         'splitSentences': true,
         'listeners': {
             'onvoiceschanged': (voices) => {
@@ -149,7 +149,11 @@ const handleClick = () => {
                     temp_word = temp_word.slice(0, -1);
                     console.log("now is ===" + temp_word);
                 }
-                result_str.push(temp_word);
+                if (temp_word.endsWith('a') || temp_word.endsWith('i') || temp_word.endsWith('u') || temp_word.endsWith('e') || temp_word.endsWith('o')) {
+                    result_str.push(temp_word + 'ー');
+                } else {
+                    result_str.push(temp_word);
+                }
                 temp_word = '';
             }
         }
