@@ -302,7 +302,13 @@ const handleSound = () => {
 }
 
 .icon:hover {
-    background-color: #333;
+    @media (prefers-color-scheme: dark) {
+        background-color: #333;
+    }
+
+    @media (prefers-color-scheme: light) {
+        background-color: #f1f1f1;
+    }
 }
 
 .icon-container {
