@@ -177,6 +177,9 @@ const handleCopy = () => {
 
 const handleSound = () => {
     if (result.value != '这里将显示结果') {
+        // 如果之前的语音没有结束，则先停止
+        speech.cancel();
+        // 播放新的语音
         speech.speak({ text: result.value });
     }
 }
