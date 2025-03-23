@@ -9,7 +9,7 @@
 
         <!-- 结果栏 左右两边分开 -->
         <div class="result">
-            <!-- 转换结果 不可编辑 限制宽度 -->
+            <!-- 转换结果 不可编辑 限制宽度 如果字符过多则显示省略号 -->
             <div class="result-text">{{ result }}</div>
             <div class="icon-container">
                 <!-- 发音图标 点击播放-->
@@ -44,7 +44,8 @@
                 后鼻音全部改为前鼻音
             </div>
             <!-- 显示在浏览器底部 -->
-            <h4 style="position: fixed; bottom: 0; left: 0; right: 0; text-align: center;">转换方式完全由我个人感觉，毫无何参考价值，纯属娱乐</h4>
+            <h4 style="position: fixed; bottom: 0; left: 0; right: 0; text-align: center;">转换方式完全由我个人感觉，毫无何参考价值，纯属娱乐
+            </h4>
         </div>
     </div>
 </template>
@@ -87,6 +88,11 @@ onMounted(() => {
 })
 
 const handleClick = () => {
+    // 如果字符过长，则提示
+    // if (input.value.length > 200) {
+    //     alert('字符数不能超过200');
+    //     return;
+    // }
     if (input.value != '') {
         const temp = pinyin(input.value, { toneType: 'none', type: 'str' });
         // 将所有ü替换为v
@@ -140,7 +146,7 @@ const handleClick = () => {
                     console.log("now is ===" + temp_word);
                 }
                 // 将ü替换为u
-                else if (temp_word[1] == 'ü') {
+                if (temp_word[1] == 'ü') {
                     temp_word = temp_word.replace('ü', 'yu');
                     console.log("now is ===" + temp_word);
                 }
@@ -287,11 +293,22 @@ const handleSound = () => {
     font-size: 20px;
     border-radius: 5px;
     padding: 0 10px;
-    /* 限制宽度 */
-    /* max-width: 70%; */
-    /* 字符在小于宽度时换行 */
-    /* word-break: break-all;
-    word-wrap: break-word; */
+    /* 多行文本溢出显示省略号 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    /* 电脑上显示10行 */
+    @media (min-width: 768px) {
+        -webkit-line-clamp: 10;
+        line-clamp: 10;
+    }
+    /* 手机上显示3行 */
+    @media (max-width: 768px) {
+        -webkit-line-clamp: 5;
+        line-clamp: 5;
+    }
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
 }
 
 .icon {
