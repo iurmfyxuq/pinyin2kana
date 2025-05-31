@@ -72,7 +72,7 @@ const handleSound = () => {
 }
 
 const handleInput = (event) => {
-    input.value = event.target.value.replace(/[^a-zA-Z]/g, '');
+    // input.value = event.target.value.replace(/[^a-zA-Z]/g, '');
 }
 </script>
 
