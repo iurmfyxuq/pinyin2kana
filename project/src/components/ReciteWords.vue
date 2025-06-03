@@ -156,4 +156,24 @@ const handleSound = () => {
     background-color: #333;
 }
 
+@media (prefers-color-scheme: light) {
+    .input {
+        color: #000;
+        background-color: #e9e9e9;
+    }
+
+    .button {
+        color: #818181;
+        background-color: #e9e9e9;
+    }
+
+    .button:hover {
+        background-color: #f1f1f1;
+    }
+
+    .icon:hover {
+        background-color: #e0e0e0;
+    }
+}
+
 </style>
