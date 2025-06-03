@@ -14,12 +14,19 @@
                 @click="currentPage = 'romaji2hira'">
                 罗马字转假名
             </div>
+            <div 
+                class="nav-item" 
+                :class="{ active: currentPage === 'reciteWords' }"
+                @click="currentPage = 'reciteWords'">
+                背单词
+            </div>
         </div>
         <!-- 上下间隔 -->
         <div style="height: 80px;"></div>
         <!-- 页面内容 -->
         <Convert v-if="currentPage === 'convert'" />
         <Romaji2hira v-if="currentPage === 'romaji2hira'" />
+        <ReciteWords v-if="currentPage === 'reciteWords'" />
     </div>
 </template>
 
@@ -27,6 +34,7 @@
 import { ref } from 'vue';
 import Convert from './Convert.vue';
 import Romaji2hira from './Romaji2hira.vue';
+import ReciteWords from './ReciteWords.vue';
 
 const currentPage = ref('convert');
 </script>
