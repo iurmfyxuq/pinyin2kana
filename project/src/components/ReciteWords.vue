@@ -1,5 +1,5 @@
 <template>
-    <div class="recite-words">
+    <div class="mainContent">
         <h1>背单词</h1>
         <!--上传单词文本 
         按钮 点击后弹出文件选择器 选择后读取文件内容 显示在文本框中 文本框大小为500px 黑色主题 
@@ -11,7 +11,7 @@
         <!-- <button class="button" @click="readFile">选择单词文件</button> -->
 
         <div class="result">
-            <div class="result-text">{{ currentWord }}</div>
+            <div class="word">{{ currentWord }}</div>
             <div v-if="currentWord" class="icon-container">
                 <!-- 发音图标 点击播放-->
                 <div class="icon" @click="handleSound">
@@ -92,88 +92,12 @@ const handleSound = () => {
 </script>
 
 <style scoped>
-.recite-words {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.button {
-    width: 40%;
-    height: 50px;
-    border: none;
-    border-radius: 5px;
-    padding: 0 10px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #000;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.button:hover {
-    background-color: #333;
-}
-
-.result {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    max-width: 40%;
-}
-
-.result-text {
+@import  "../assets/style.css";
+.word {
     flex: 1;
     font-size: 50px;
     width: 100%;
     border-radius: 5px;
     padding: 0 10px;
 }
-
-.icon-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.icon {
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.icon:hover {
-    background-color: #333;
-}
-
-@media (prefers-color-scheme: light) {
-    .input {
-        color: #000;
-        background-color: #e9e9e9;
-    }
-
-    .button {
-        color: #818181;
-        background-color: #e9e9e9;
-    }
-
-    .button:hover {
-        background-color: #f1f1f1;
-    }
-
-    .icon:hover {
-        background-color: #e0e0e0;
-    }
-}
-
 </style>

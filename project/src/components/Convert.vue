@@ -1,5 +1,5 @@
 <template>
-    <div class="convert">
+    <div class="mainContent">
         <!-- 标题 -->
         <h1>中文转日语假名</h1>
         <h4>输入中文点击 转换 会以拼音按照一定规则转换为假名</h4>
@@ -147,104 +147,5 @@ const handleSound = () => {
 </script>
 
 <style scoped>
-.convert {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.input {
-    width: 40%;
-    height: 40px;
-    border: 1px solid #333;
-    border-radius: 5px;
-    padding: 0 10px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #000;
-    outline: none;
-    word-wrap: break-word;
-}
-
-.input:focus {
-    border-color: #666;
-}
-
-.button {
-    width: 40%;
-    height: 50px;
-    border: none;
-    border-radius: 5px;
-    padding: 0 10px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #000;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.button:hover {
-    background-color: #333;
-}
-
-.result {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    max-width: 40%;
-}
-
-.result-text {
-    flex: 1;
-    font-size: 20px;
-    width: 100%;
-    border-radius: 5px;
-    padding: 0 10px;
-}
-
-.icon-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.icon {
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.icon:hover {
-    background-color: #333;
-}
-
-@media (prefers-color-scheme: light) {
-    .input {
-        color: #000;
-        background-color: #e9e9e9;
-    }
-
-    .button {
-        color: #818181;
-        background-color: #e9e9e9;
-    }
-
-    .button:hover {
-        background-color: #f1f1f1;
-    }
-
-    .icon:hover {
-        background-color: #e0e0e0;
-    }
-}
-</style> 
+@import  "../assets/style.css";
+</style>
