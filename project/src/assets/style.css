@@ -15,7 +15,7 @@
     padding: 0 10px;
     font-size: 16px;
     color: #fff;
-    background-color: #000;
+    background-color: #1f1f1f;
     outline: none;
     word-wrap: break-word;
 }
@@ -32,7 +32,7 @@
     padding: 0 10px;
     font-size: 16px;
     color: #fff;
-    background-color: #000;
+    background-color: #1f1f1f;
     cursor: pointer;
     transition: background-color 0.3s;
 }

@@ -5,8 +5,8 @@
         <h1>罗马字转假名</h1>
         <h4>输入罗马字点击 转换 转换为平假名</h4>
         <!-- 输入罗马字 输入框大小为50px 黑色主题 默认显示一些内容-->
-         <!-- 无法输入除了英文字母以外的字符 -->
-        <input type="text" v-model="input" class="input" placeholder="请输入罗马字" @input="handleInput" /> 
+        <!-- 无法输入除了英文字母以外的字符 -->
+        <input type="text" v-model="input" class="input" placeholder="请输入罗马字" @input="handleInput" />
 
         <!-- 结果栏 左右两边分开 -->
         <div class="result">
@@ -25,7 +25,7 @@
         </div>
         <!-- 点击按钮 按钮大小为50px 黑色主题-->
         <button @click="handleClick" class="button">转换</button>
-        
+
     </div>
 </template>
 
@@ -80,4 +80,4 @@ const handleInput = (event) => {
 <!-- romaji2hira  -->
 <style scoped>
 @import '../assets/style.css';
-</style> 
+</style>

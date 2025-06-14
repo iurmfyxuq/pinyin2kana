@@ -2,23 +2,19 @@
     <div class="main">
         <!-- 导航栏 -->
         <div class="nav">
-            <div 
-                class="nav-item" 
-                :class="{ active: currentPage === 'convert' }"
-                @click="currentPage = 'convert'">
+            <div class="nav-item" :class="{ active: currentPage === 'convert' }" @click="currentPage = 'convert'">
                 汉字转片假名
             </div>
-            <div 
-                class="nav-item" 
-                :class="{ active: currentPage === 'romaji2hira' }"
+            <div class="nav-item" :class="{ active: currentPage === 'romaji2hira' }"
                 @click="currentPage = 'romaji2hira'">
                 罗马字转假名
             </div>
-            <div 
-                class="nav-item" 
-                :class="{ active: currentPage === 'reciteWords' }"
+            <div class="nav-item" :class="{ active: currentPage === 'reciteWords' }"
                 @click="currentPage = 'reciteWords'">
                 背单词
+            </div>
+            <div class="nav-item" :class="{ active: currentPage === 'dateCalculation' }" @click="currentPage = 'dateCalculation'">
+                日期计算
             </div>
         </div>
         <!-- 上下间隔 -->
@@ -27,6 +23,7 @@
         <Convert v-if="currentPage === 'convert'" />
         <Romaji2hira v-if="currentPage === 'romaji2hira'" />
         <ReciteWords v-if="currentPage === 'reciteWords'" />
+        <DateCalculation v-if="currentPage === 'dateCalculation'" />
     </div>
 </template>
 
@@ -35,6 +32,7 @@ import { ref } from 'vue';
 import Convert from './Convert.vue';
 import Romaji2hira from './Romaji2hira.vue';
 import ReciteWords from './ReciteWords.vue';
+import DateCalculation from './DateCalculation.vue';
 
 const currentPage = ref('convert');
 </script>

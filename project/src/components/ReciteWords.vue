@@ -5,10 +5,6 @@
         按钮 点击后弹出文件选择器 选择后读取文件内容 显示在文本框中 文本框大小为500px 黑色主题 
         默认显示一些内容
         如果已经选择了文件重新点击则切换选择-->
-        <!-- <input type="file" @change="handleFileChange" /> -->
-        <!-- <textarea v-model="text" class="text-area" placeholder="请输入单词文本"
-        style="height: 500px;"></textarea> -->
-        <!-- <button class="button" @click="readFile">选择单词文件</button> -->
 
         <div class="result">
             <div class="word">{{ currentWord }}</div>

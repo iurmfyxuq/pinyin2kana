@@ -147,5 +147,5 @@ const handleSound = () => {
 </script>
 
 <style scoped>
-@import  "../assets/style.css";
+@import "../assets/style.css";
 </style>
